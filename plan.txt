@@ -47,3 +47,5 @@ class CreateUsers < ActiveRecord::Migration[7.0]
     end
   end
 end
+
+ API_KEY = jGafiZRpXWh2IL6CFTwqyZbILSP0eWRO8cJwn7vF
