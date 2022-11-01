@@ -1,0 +1,49 @@
+What do we need?
+-Databse
+  - Users
+    - Admins (can Delete Users/Can delete)
+  - Image Comments
+    - Validataions prevent bad words
+    - Titlize all comments
+  - Image
+
+-Views
+  - Homepage (nasa picture)
+    - Image of the day displayed (API)
+    - Comments Displayed (IF date is today, show comment (scope?))
+  - Sign Up page
+  - Sign In page
+  - Users Page  (only admins can see)
+-Controlers
+  - authentication (using Devise)
+  - Authenticate admins
+  - Except authentication (users can see everything EXCEPT the User VIEW)
+  - ONLY authentication (Admins can ONLY delete comments)
+-API Call ( Nasa picture of the day)
+  -PORO model (app/services)
+-Tests
+  - Integration Tests
+  - Plane old ruby tests
+  - API tests
+
+
+
+
+
+
+
+pj was here
+
+class CreateUsers < ActiveRecord::Migration[7.0]
+  def change
+    create_table :users do |t|
+      t.column(:email, :string)
+      t.column(:user_name, :string)
+      t.column(:password_hash, :string)
+      t.column(:password_salt, :string)
+      t.column(:admin, :boolean)
+
+      t.timestamps()
+    end
+  end
+end
