@@ -3,7 +3,7 @@ class ImagesController < ApplicationController
   def today
     image = Image.new()
     @daily_image = image.apod()
-    # @daily_comments = Comment.today_scope
+    @comments = Comment.all
     render :today
   end
 

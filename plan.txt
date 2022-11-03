@@ -1,31 +1,43 @@
 What do we need?
 -Databse
-  - Users
+  - Users [√]
     - Admins (can Delete Users/Can delete)
-  - Image Comments
+  - Image Comments [√]
     - Validataions prevent bad words
     - Titlize all comments
-  - Image
+  - Image [√]
 
 -Views
-  - Homepage (nasa picture)
-    - Image of the day displayed (API)
+  - Homepage (nasa picture) DONE [√]
+    - Image of the day displayed (API) DONE [√]
     - Comments Displayed (IF date is today, show comment (scope?))
   - Sign Up page
   - Sign In page
-  - Users Page  (only admins can see)
+  - Users Page  (only admins can see) INDEX route for Users and VIEW
+
 -Controlers
-  - authentication (using Devise)
-  - Authenticate admins
+  - authentication (using BCrypt)
+  - Authenticate admins (BCrypt)
   - Except authentication (users can see everything EXCEPT the User VIEW)
   - ONLY authentication (Admins can ONLY delete comments)
--API Call ( Nasa picture of the day)
-  -PORO model (app/services)
+-API Call ( Nasa picture of the day) DONE [√]
+  -PORO model (app/services) DONE [√]
 -Tests
+  - Association Tests DONE [√]
   - Integration Tests
   - Plane old ruby tests
   - API tests
 
+
+
+BCrypt
+
+Users Model Methods
+Routes 
+Sessions
+Users Controllers
+Adding Methods to Ap9*/-plication Controller (authentication Checking + admin)
+Views for Sign UP and Sign IN (FORMS)
 
 
 
@@ -34,18 +46,5 @@ What do we need?
 
 pj was here
 
-class CreateUsers < ActiveRecord::Migration[7.0]
-  def change
-    create_table :users do |t|
-      t.column(:email, :string)
-      t.column(:user_name, :string)
-      t.column(:password_hash, :string)
-      t.column(:password_salt, :string)
-      t.column(:admin, :boolean)
 
-      t.timestamps()
-    end
-  end
-end
-
- API_KEY = jGafiZRpXWh2IL6CFTwqyZbILSP0eWRO8cJwn7vF
+comment = Comment.new(user_id: 2, comment_body: "Gods in his heaven and alls right with the world", image_id: 1),
